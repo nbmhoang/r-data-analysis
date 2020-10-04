@@ -10,8 +10,25 @@ is_prime <- function(x) {
   return(TRUE)
 }
 
+fixed_double <- function() {
+  for(i in 1:10) {
+    print(i^2)
+  }
+}
+
 double <- function(x) {
   return(x*x)
+}
+
+double_range <- function(from, to) {
+  for(i in from:to) {
+    print(i^2)
+  }
+}
+
+sum_double <- function(n) {
+  r <- seq(1, n)
+  return(sum(sapply(r, double)))
 }
 
 # Shorthand
@@ -64,3 +81,18 @@ repeat {
   x <- x + 1
 }
 
+double(5)
+double_range(1, 5)
+sum_double(5)
+
+# 1! + 2! + 3! + 4! + 5!
+sum_factorial <- function(n) {
+  p <- 1
+  total <- 0
+  for(i in 1:n) {
+    total <- total + p*i
+  }
+  return(total)
+}
+
+sum_factorial(1)
